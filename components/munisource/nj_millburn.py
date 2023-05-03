@@ -300,7 +300,7 @@ class NJMillburnCrawler(object):
                         self._minutes[doctype][year] = all_minutes[doctype]
 
             self._validation = NJMillburnCrawler.show_minutes_table(
-                years_to_process, self._minutes
+                YEARS_TO_PROCESS, self._minutes
             )
             if verbose:
                 print(self._validation)
