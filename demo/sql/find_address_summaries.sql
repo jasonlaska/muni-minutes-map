@@ -4,7 +4,7 @@ SELECT
 JOIN address ON address.id = summary.address_id
 JOIN source ON summary.source_id = source.id
 WHERE
-    address.street ilike '%35 main%'
+    address.street ilike '%188 essex%'
 ORDER BY source.record_date;
 
 
