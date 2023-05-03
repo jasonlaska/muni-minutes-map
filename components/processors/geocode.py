@@ -16,10 +16,8 @@ class Coord:
 
 
 class Geocode(DocumentProcessor):
-    def __init__(self, source, city, state):
+    def __init__(self, source):
         self._source = source
-        self._city = city
-        self._state = state
         self._errors = []
         self._coordinates = None
         self._artifact = Artifact(source, PROCESSOR_NAME)
@@ -43,7 +41,7 @@ class Geocode(DocumentProcessor):
         self._coordinates = dict()
         for street in summaries:
             location = self._geolocator.geocode(
-                f"{street} {self._city} {self._state}", timeout=10
+                f"{street} {self._source['city']} {self._source['state']}", timeout=10
             )
             if not location:
                 self._errors.append("GEOCODE_FAILED")

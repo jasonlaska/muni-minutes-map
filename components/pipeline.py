@@ -32,7 +32,7 @@ PIPELINE_CONFIG = [
     },
     {
         "processor": Geocode,
-        "args": ["source", "Millburn", "New Jersey"],
+        "args": ["source"],
         "extract_args": ["summaries"],
         "output": "coords",
         "load_from_cache": True,
